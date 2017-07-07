@@ -19,7 +19,7 @@ import static java.lang.System.exit;
 @SpringBootApplication
 public class PubmaticApplication implements CommandLineRunner {
 
-	private static final String inputFileName = "Stocks.txt";
+	private static String inputFileName = "Stocks.txt";
 	private static final String outputFileName = "Output.csv";
 
 
@@ -37,6 +37,7 @@ public class PubmaticApplication implements CommandLineRunner {
 
         if (args.length > 0) {
             System.out.println("File Path Provided");
+            inputFileName=args[0];
         } else {
             System.out.println("File Path Not Provided taking in default File");
         }
@@ -81,7 +82,7 @@ public class PubmaticApplication implements CommandLineRunner {
         long seconds = (end.getTime()-start.getTime())/1000;
         System.out.println("done in :"+seconds+" secs");
 
-        exit(0);
+        //exit(0);
     }
 
 }
